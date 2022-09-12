@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block undangan %}
+<div class="container-sm col-8">
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <h3>Dengan ini mengundang kakak/adik bernama :</h3>
+            <h4><i>{{namaku}}</i></h4>
+        </div>
+    </div>
+</div>
+{% endblock undangan %}
+{% block inputkomentar %}
+
+<!-- ini adalah komentar -->
+<div class="container-sm col-8">
+<section class="row border my-2 align-items-center justify-content-center">
+    <div class="col-1 border">
+    <img src="{{ url_for('static', filename='img/rednaegi.png') }}" class="rounded-circle mx-auto d-block img-fluid" alt="..." />
+    </div>
+    <div class="col-7 p-0">
+    <h5>{{namaku}}</h5>
+    </div>
+</section>
+<section class="row border justify-content-center">
+    <div class="col-8">
+    <form action="{{ url_for('tamu_undangan', linknamaundangan = namaku) }}" method="POST">
+        <div class="form-floating">
+        <textarea class="form-control" placeholder="Silahkan Komentar" name="komentar" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Komentar</label>
+        </div>
+        <div class="d-grid gap-2 col-4 my-2">
+        <input class="btn btn-dark" type="submit" value='Kirim'>
+        </div>
+    </form>
+    </div>
+</section>
+</div>
+<!-- Akhir komentar -->
+
+{% endblock inputkomentar %} 
+
